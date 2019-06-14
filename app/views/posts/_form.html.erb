@@ -21,6 +21,13 @@
     <%= form.text_area :body %>
   </div>
 
+  <div class="field">
+    <%= form.fields_for :tags do |c| %>
+      <%= render 'tag_fields', f: c %>
+    <% end %>
+    <%= link_to_add_association "行を追加", form, :tags %> 
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
