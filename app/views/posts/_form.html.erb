@@ -22,10 +22,12 @@
   </div>
 
   <div class="field">
-    <%= form.fields_for :tags do |c| %>
-      <%= render 'tag_fields', f: c %>
+    <%= form.fields_for :tags do |tag| %>
+      <%= render 'tag_fields', f: tag %>
     <% end %>
-    <%= link_to_add_association "行を追加", form, :tags %> 
+    <div class="links">
+      <%= link_to_add_association "Tagを追加", form, :tags %> 
+    </div>
   </div>
 
   <div class="actions">
